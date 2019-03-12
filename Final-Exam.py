@@ -14,8 +14,8 @@ does not input the letter into one of the blank lines but still shows the user w
 
 word = "hello"
 print("Let's play hangman! The word you have to guess is", len(word), "letters.")
-"""
 
+'''
 num_of_guesses = 7
 for i in range(num_of_guesses):
     guess = input("Guess a letter: ")
@@ -23,12 +23,13 @@ for i in range(num_of_guesses):
         print("You got it wrong! You lose a limb.")
     else:
         print("You got it right!")
-"""
+'''
 guessesLeft = 7
 testString = "-----"
-
+displayWord = " "
+'''
 for i in range(guessesLeft):
-    guess = input("Guess a letter: ")
+    
     for l in range(len(word)):
         letter = word[l]
         if guess == letter:
@@ -36,5 +37,32 @@ for i in range(guessesLeft):
         else:
             testString.replace(testString[l], ".")
     print(testString)
+'''
+guess = input("Guess a letter: ")
+
+def userGuess():
+    guess = input("Guess a letter: ")
+    while(len(guess) != 1):
+        guess = input("Guess one letter: ")
+        if len(guess) == 1 and guess.islower():
+            return guess
+
+def updateWord(guess):
+    for i in range(len(word) - 1):
+        if guess == word[i]:
+            displayWord = displayWord + guess
+        else:
+            displayWord = displayWord + testString
+    print(displayWord)
+
+def dashes(testString):
+    testString = ""
+    for j in range(len(word)):
+        testString = testString + "-"
+    return testString
 
 
+userGuess()
+updateWord(guess)
+dashes(testString)
+print(testString)
