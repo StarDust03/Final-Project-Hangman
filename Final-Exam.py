@@ -26,15 +26,15 @@ for i in range(num_of_guesses):
 """
 guessesLeft = 7
 testString = "-----"
-
+displayString = " "
 for i in range(guessesLeft):
     guess = input("Guess a letter: ")
     for l in range(len(word)):
         letter = word[l]
         if guess == letter:
             testString = testString.replace(testString[l], guess, 1)
-        else:
-            testString.replace(testString[l], ".")
-    print(testString)
+
+    displayString = testString
+    print(displayString)
 
 
