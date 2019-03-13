@@ -15,7 +15,7 @@ the user what is left in the blank lines.
 word = "hello"
 print("Let's play hangman! The word you have to guess is", len(word), "letters.")
 
-
+'''
 num_of_guesses = 7
 for i in range(num_of_guesses):
     guess = input("Guess a letter: ")
@@ -24,9 +24,8 @@ for i in range(num_of_guesses):
     else:
         print("You got it right!")
 
-
-
-while displayWord != word:
-    userGuess()
-    updateWord(guess)
-print("Congrats! You win!")
+'''
+dashes()
+while True:
+    guessLength()
+    updateword(guess)
