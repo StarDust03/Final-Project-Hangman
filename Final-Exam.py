@@ -23,3 +23,10 @@ for i in range(num_of_guesses):
         print("You got it wrong! You lose a limb.")
     else:
         print("You got it right!")
+
+
+
+while displayWord != word:
+    userGuess()
+    updateWord(guess)
+print("Congrats! You win!")
