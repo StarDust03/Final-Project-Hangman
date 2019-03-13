@@ -25,7 +25,21 @@ for i in range(num_of_guesses):
         print("You got it right!")
 
 '''
+guesses_left = 10
+
 dashes()
-while True:
+
+while word != testString and guesses_left > 0:
     guessLength()
     updateword(guess)
+    if guess not in word:
+        guesses_left = guesses_left - 1
+        print("You got it wrong you have", guesses_left, "!")
+    else:
+        print("You got it right!You have", guesses_left, "Guesses Left!")
+if testString == word:
+    print("Yay you win the word was", word, ".")
+else:
+    print("You lost. The word was", word, ".")
+
+
