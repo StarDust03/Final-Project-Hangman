@@ -27,6 +27,7 @@ for i in range(num_of_guesses):
 guessesLeft = 7
 testString = "-----"
 displayString = " "
+"""
 for i in range(guessesLeft):
     guess = input("Guess a letter: ")
     for l in range(len(word)):
@@ -36,5 +37,6 @@ for i in range(guessesLeft):
 
     displayString = testString
     print(displayString)
+"""
 
 
