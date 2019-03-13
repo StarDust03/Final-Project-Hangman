@@ -51,9 +51,10 @@ def userGuess():
             return guess
 
 def updateWord(guess):
+    global testString
+    displayWord = ""
     for i in range(len(word)):
         if guess == word[i]:
-            global displayWord
             displayWord = displayWord + guess
         else:
             displayWord = displayWord + testString[i]
