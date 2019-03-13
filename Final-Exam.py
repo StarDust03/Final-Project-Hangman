@@ -38,9 +38,16 @@ for i in range(guessesLeft):
             testString.replace(testString[l], ".")
     print(testString)
 '''
+'''
 guess = input("Guess a letter: ")
-
+def dashes(testString):
+    testString = ""
+    for j in range(len(word)):
+        testString = testString + "-"
+    return testString
+'''
 def userGuess():
+    global guess
     guess = input("Guess a letter: ")
     while(len(guess) != 1):
         guess = input("Guess one letter: ")
@@ -50,19 +57,14 @@ def userGuess():
 def updateWord(guess):
     for i in range(len(word) - 1):
         if guess == word[i]:
+            global displayWord
             displayWord = displayWord + guess
         else:
             displayWord = displayWord + testString
     print(displayWord)
 
-def dashes(testString):
-    testString = ""
-    for j in range(len(word)):
-        testString = testString + "-"
-    return testString
 
 
 userGuess()
 updateWord(guess)
-dashes(testString)
 print(testString)
