@@ -25,8 +25,8 @@ for i in range(num_of_guesses):
         print("You got it right!")
 '''
 guessesLeft = 7
-testString = "-----"
-displayWord = " "
+testString = ""
+displayWord = ""
 '''
 for i in range(guessesLeft):
     
@@ -38,14 +38,10 @@ for i in range(guessesLeft):
             testString.replace(testString[l], ".")
     print(testString)
 '''
-'''
-guess = input("Guess a letter: ")
-def dashes(testString):
-    testString = ""
-    for j in range(len(word)):
-        testString = testString + "-"
-    return testString
-'''
+
+
+
+
 def userGuess():
     global guess
     guess = input("Guess a letter: ")
@@ -55,16 +51,19 @@ def userGuess():
             return guess
 
 def updateWord(guess):
-    for i in range(len(word) - 1):
+    for i in range(len(word)):
         if guess == word[i]:
             global displayWord
             displayWord = displayWord + guess
         else:
-            displayWord = displayWord + testString
+            displayWord = displayWord + testString[i]
     print(displayWord)
 
+def dashes():
+    global testString
+    for j in range(len(word)):
+        testString = testString + "-"
 
-
+dashes()
 userGuess()
 updateWord(guess)
-print(testString)
