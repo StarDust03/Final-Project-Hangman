@@ -62,7 +62,8 @@ def updateWord(guess):
             displayWord = displayWord + guess
         else:
             displayWord = displayWord + testString[i]
-    print(displayWord)
+    testString = displayWord
+    print(testString)
 
 def dashes():
     global testString
